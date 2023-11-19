@@ -9,8 +9,6 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 
 @Configuration
 public class JedisConfig {
-	
-	//un commento a caso
 	@Bean
 	public JedisConnectionFactory redisConnectionFactory() {
 		RedisStandaloneConfiguration config = new RedisStandaloneConfiguration("localhost", 6379);
