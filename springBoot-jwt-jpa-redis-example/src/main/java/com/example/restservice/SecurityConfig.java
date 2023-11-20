@@ -19,6 +19,10 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import com.example.restservice.entity.UserRole;
+import com.example.restservice.repo.UserRepository;
+import com.example.restservice.service.JwtRedisService;
+
 import jakarta.servlet.DispatcherType;
 
 @Configuration

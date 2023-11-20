@@ -12,6 +12,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+import com.example.restservice.entity.User;
+import com.example.restservice.entity.UserRole;
+import com.example.restservice.repo.UserRepository;
+
 @SpringBootApplication
 @EnableScheduling
 public class RestServiceApplication {
