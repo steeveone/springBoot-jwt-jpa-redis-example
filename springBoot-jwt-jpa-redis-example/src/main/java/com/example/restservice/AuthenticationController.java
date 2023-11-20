@@ -56,4 +56,15 @@ public class AuthenticationController {
 	    	logger.trace("logging out for [ " + email + " ] token [ " + jwtTkn + " ]");
 	    	this.authenticationService.logout(email, jwtTkn);
 	    }
+	    
+	    @PostMapping("logout")
+	    public void logout(@RequestHeader("Authorization") String token, @RequestBody String rememberMe)
+	    {
+	    	User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	    	final String email = user.getEmail();
+	    	String jwtTkn = token.replace(JwtProvider.prefix, "");
+	    	logger.trace("logging out for [ " + email + " ] token [ " + jwtTkn + " ]");
+	    	this.authenticationService.logout(email, jwtTkn);
+	    	this.authenticationService.logout(email, rememberMe);
+	    }
 }

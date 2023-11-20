@@ -1,5 +1,8 @@
 package com.example.restservice;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +57,7 @@ public class JwtRedisService {
 			long evicted = 0;
 			logger.trace("found key [ " + key + " ]");
 			long keySize = redisTemplate.opsForList().size(key);
+			List<String> toRemove = new ArrayList<String>();
 			for (long i = 0; i < keySize; i++)
 			{
 				String jwtToken = redisTemplate.opsForList().index(key, i);
@@ -65,11 +69,15 @@ public class JwtRedisService {
 				catch (TokenExpiredException ex)
 				{
 					logger.trace("found a invalid token");
-					removeToken(key, jwtToken);
+					//removeToken(key, jwtToken);
+					toRemove.add(jwtToken);
 					evicted++;
 				}
 			}
-			logger.debug("evicted " + evicted + " sessions");
+			toRemove.forEach(tkn->{
+				removeToken(key, tkn);
+			});
+			logger.debug("evicted " + evicted + " sessions for user [ " + key + " ] ");
 		});
 	}
 }
