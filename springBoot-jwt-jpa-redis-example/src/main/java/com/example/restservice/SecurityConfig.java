@@ -78,6 +78,7 @@ public class SecurityConfig {
 		 http.addFilterBefore(new AuthorizationFilter(authenticationManager(http.getSharedObject(AuthenticationConfiguration.class)), this.userRepository, this.redisService), UsernamePasswordAuthenticationFilter.class);
 		 
 		 http.authorizeHttpRequests((request) -> request.dispatcherTypeMatchers(DispatcherType.ERROR).permitAll()
+				 										.requestMatchers("/public/authentication/rememberMe").authenticated()
 				 										.requestMatchers("/public/authentication/renew").authenticated()
 				 										.requestMatchers("/public/authentication/logout").authenticated()
 				 										.requestMatchers("/public/**").permitAll()

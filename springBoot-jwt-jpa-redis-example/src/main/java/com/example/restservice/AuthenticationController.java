@@ -29,6 +29,15 @@ public class AuthenticationController {
 	    	return tkn;
 	    }
 	    
+	    @GetMapping("rememberMe")
+	    public JwtToken rememberMe()
+	    {
+	    	User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	    	JwtToken tkn = new JwtToken();
+	    	tkn.setJwttoken(this.authenticationService.rememberMe(user));
+	    	return tkn;
+	    }
+	    
 	    @GetMapping("renew")
 	    public JwtToken renew(@RequestHeader("Authorization") String token )
 	    {

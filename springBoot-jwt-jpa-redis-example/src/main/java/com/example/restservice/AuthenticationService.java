@@ -56,6 +56,17 @@ public class AuthenticationService {
         return jwtToken;
     }
     
+    public String rememberMe(User user)
+    {
+    	ObjectNode userNode = new ObjectMapper().convertValue(user, ObjectNode.class);
+    	userNode.remove("password");
+        Map<String, Object> claimMap = new HashMap<String, Object>(0);
+        claimMap.put("user", userNode);
+        String jwtToken =  JwtProvider.createRememberMeJwt(user.getEmail(), claimMap);
+        redisService.addToken(user.getEmail(), jwtToken);
+        return jwtToken;
+    }
+
     public String renew(String oldJwtToken)
     {
     	logger.trace("renewing token [ " + oldJwtToken + " ]");

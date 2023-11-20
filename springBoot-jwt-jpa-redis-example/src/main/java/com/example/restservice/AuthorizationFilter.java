@@ -51,6 +51,14 @@ public class AuthorizationFilter extends BasicAuthenticationFilter
         	final String token = header.replace(JwtProvider.prefix, "");
         	try {
             	final DecodedJWT decoded = JwtProvider.verifyJwt(token);
+            	if (decoded.getClaim("rememberMe").equals("true"))
+            	{
+            		if (request.getServletPath()!= "/public/authentication/renew")
+            		{
+            			response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+                		return;
+            		}
+            	}
             	final ObjectNode userNode = this.mapper.readValue(decoded.getClaim("user").asString(), ObjectNode.class);
             	final User user = this.mapper.convertValue(userNode, User.class);
             	if (redisService.checkToken(user.getEmail(), token))
