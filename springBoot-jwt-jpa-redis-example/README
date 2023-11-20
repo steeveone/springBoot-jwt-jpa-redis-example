@@ -1,1 +1,1 @@
-A simple Spring Boot application that handle authentication trought JWT tokens and persist users trought JPA, persists JWT sessions on REDIS
+A simple Spring Boot application that handle authentication trought JWT tokens and persist users trought JPA, persists JWT sessions on REDIS.
