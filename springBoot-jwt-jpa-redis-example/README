@@ -1,0 +1,1 @@
+A simple Spring Boot application that handle authentication trought JWT tokens and persist on REDIS
