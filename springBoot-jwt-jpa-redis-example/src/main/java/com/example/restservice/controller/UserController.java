@@ -41,7 +41,7 @@ public class UserController {
 
     @PostMapping("users")
     void addUser(@RequestBody User user) {
-    	logger.info("modified user [ " +user.getEmail()+ " ]");
+    	logger.info("added user [ " +user.getEmail()+ " ]");
     	user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
         userRepository.save(user);
     }

@@ -3,7 +3,6 @@ package com.example.restservice;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -29,7 +28,6 @@ import com.example.restservice.service.JwtRedisService;
 import jakarta.servlet.DispatcherType;
 
 import static org.springframework.security.web.util.matcher.AntPathRequestMatcher.antMatcher;
-
 
 @Configuration
 @EnableWebSecurity
