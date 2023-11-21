@@ -38,7 +38,6 @@ public class UserController {
     	logger.info("listed users");
         return (List<User>) userRepository.findAll();
     }
-// un commento
     @PostMapping("users")
     void addUser(@RequestBody User user) {
     	logger.info("added user [ " +user.getEmail()+ " ]");
