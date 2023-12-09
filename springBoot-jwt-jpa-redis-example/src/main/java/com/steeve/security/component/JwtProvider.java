@@ -1,4 +1,4 @@
-package com.example.restservice.component;
+package com.steeve.security.component;
 
 import java.util.Map;
 
@@ -6,6 +6,7 @@ import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.BeanInitializationException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
@@ -18,18 +19,19 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 public class JwtProvider
 {
 	 private final Logger logger = LoggerFactory.getLogger(JwtProvider.class);
-
-	 public static final String issuer = "demo-api-app";
+	 	
+	 public static String issuer;
 	 public static String secret;
 	 public static String prefix;
 	 public static String headerParam;
-	 
-	 public JwtProvider(Environment env)
+	 private  @Value("${jwt.jwtissuer}") String jwtissuer;
+
+	public JwtProvider(Environment env)
 	 {
-		 logger.trace("init JwtProvider");
-		 JwtProvider.secret = env.getProperty("security.secret");
-	     JwtProvider.prefix = env.getProperty("security.prefix");
-	     JwtProvider.headerParam = env.getProperty("security.param");
+		 JwtProvider.issuer = env.getProperty("jwt.issuer");
+		 JwtProvider.secret = env.getProperty("jwt.secret");
+	     JwtProvider.prefix = env.getProperty("jwt.prefix");
+	     JwtProvider.headerParam = env.getProperty("jwt.param");
 	     
 	     if (JwtProvider.secret == null || JwtProvider.prefix == null || JwtProvider.headerParam == null) {
 	            throw new BeanInitializationException("Cannot assign security properties. Check application.yml file.");

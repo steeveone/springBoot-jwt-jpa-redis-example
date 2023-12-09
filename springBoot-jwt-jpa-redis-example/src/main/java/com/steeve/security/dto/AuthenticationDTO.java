@@ -1,4 +1,4 @@
-package com.example.restservice.dto;
+package com.steeve.security.dto;
 
 public class AuthenticationDTO {
 	private String email;

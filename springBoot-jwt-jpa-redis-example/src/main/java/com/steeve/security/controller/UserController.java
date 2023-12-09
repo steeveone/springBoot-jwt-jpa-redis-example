@@ -1,4 +1,4 @@
-package com.example.restservice.controller;
+package com.steeve.security.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.example.restservice.entity.User;
-import com.example.restservice.repo.UserRepository;
-import com.example.restservice.service.JwtRedisService;
+import com.steeve.security.entity.User;
+import com.steeve.security.repo.UserRepository;
+import com.steeve.security.service.JwtRedisService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")

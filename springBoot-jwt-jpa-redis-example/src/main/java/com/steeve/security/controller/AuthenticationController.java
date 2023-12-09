@@ -1,4 +1,4 @@
-package com.example.restservice.controller;
+package com.steeve.security.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.restservice.component.JwtProvider;
-import com.example.restservice.dto.AuthenticationDTO;
-import com.example.restservice.dto.JwtToken;
-import com.example.restservice.entity.User;
-import com.example.restservice.service.AuthenticationService;
+import com.steeve.security.component.JwtProvider;
+import com.steeve.security.dto.AuthenticationDTO;
+import com.steeve.security.dto.JwtToken;
+import com.steeve.security.entity.User;
+import com.steeve.security.service.AuthenticationService;
 
 
 @RestController

@@ -1,4 +1,4 @@
-package com.example.restservice;
+package com.steeve.security;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,14 +19,14 @@ import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.SignatureVerificationException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.example.restservice.component.JwtProvider;
-import com.example.restservice.entity.User;
-import com.example.restservice.entity.UserRole;
-import com.example.restservice.repo.UserRepository;
-import com.example.restservice.service.JwtRedisService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.steeve.security.component.JwtProvider;
+import com.steeve.security.entity.User;
+import com.steeve.security.entity.UserRole;
+import com.steeve.security.repo.UserRepository;
+import com.steeve.security.service.JwtRedisService;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

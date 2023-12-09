@@ -1,4 +1,4 @@
-package com.example.restservice;
+package com.steeve.security;
 
 import java.util.Arrays;
 
@@ -21,9 +21,9 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
 
-import com.example.restservice.entity.UserRole;
-import com.example.restservice.repo.UserRepository;
-import com.example.restservice.service.JwtRedisService;
+import com.steeve.security.entity.UserRole;
+import com.steeve.security.repo.UserRepository;
+import com.steeve.security.service.JwtRedisService;
 
 import jakarta.servlet.DispatcherType;
 
@@ -54,7 +54,7 @@ public class SecurityConfig {
 	 	CorsConfiguration configuration = new CorsConfiguration();
 	 	configuration.applyPermitDefaultValues();
 	 	configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
-	 	configuration.setAllowedMethods(Arrays.asList("GET", "POST", "DELETE"));
+	 	configuration.setAllowedMethods(Arrays.asList("GET", "POST", "DELETE", "PUT"));
 	 	//configuration.setAllowedHeaders(Arrays.asList("*"));
 	 	//configuration.setAllowCredentials(true);
 	 	UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

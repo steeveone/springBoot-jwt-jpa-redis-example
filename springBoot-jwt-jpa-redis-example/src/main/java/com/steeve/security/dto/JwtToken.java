@@ -1,4 +1,4 @@
-package com.example.restservice.dto;
+package com.steeve.security.dto;
 
 public class JwtToken {
 	private String jwttoken;

@@ -1,4 +1,4 @@
-package com.example.restservice.service;
+package com.steeve.security.service;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,12 +14,12 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.auth0.jwt.exceptions.SignatureVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.example.restservice.AuthorizationFilter;
-import com.example.restservice.component.JwtProvider;
-import com.example.restservice.entity.User;
-import com.example.restservice.repo.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.steeve.security.AuthorizationFilter;
+import com.steeve.security.component.JwtProvider;
+import com.steeve.security.entity.User;
+import com.steeve.security.repo.UserRepository;
 @Service
 public class AuthenticationService {
 	private final Logger logger = LoggerFactory.getLogger(AuthorizationFilter.class);

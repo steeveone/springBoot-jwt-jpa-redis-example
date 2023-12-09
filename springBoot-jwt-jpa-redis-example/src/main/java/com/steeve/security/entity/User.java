@@ -1,4 +1,4 @@
-package com.example.restservice.entity;
+package com.steeve.security.entity;
 
 import java.util.Set;
 

@@ -1,4 +1,4 @@
-package com.example.restservice;
+package com.steeve.security;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,12 +9,14 @@ import java.util.stream.Stream;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-import com.example.restservice.entity.User;
-import com.example.restservice.entity.UserRole;
-import com.example.restservice.repo.UserRepository;
+import com.steeve.security.component.JwtProvider;
+import com.steeve.security.entity.User;
+import com.steeve.security.entity.UserRole;
+import com.steeve.security.repo.UserRepository;
 
 @SpringBootApplication
 @EnableScheduling

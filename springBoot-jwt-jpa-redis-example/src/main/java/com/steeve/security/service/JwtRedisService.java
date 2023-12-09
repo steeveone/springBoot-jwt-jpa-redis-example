@@ -1,4 +1,4 @@
-package com.example.restservice.service;
+package com.steeve.security.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import com.auth0.jwt.exceptions.TokenExpiredException;
-import com.example.restservice.component.JwtProvider;
+import com.steeve.security.component.JwtProvider;
 
 @Service
 public class JwtRedisService {
